@@ -5,7 +5,7 @@ var util = require('util'),
 // init
 var td = new TwitDiff({
     
-    username: 'richardbranson'
+    // username: 'richardbranson'
     
 });
 
