@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 
 var util = require('util'),
     TwitDiff = require('../src/twitdiff');
@@ -5,12 +6,14 @@ var util = require('util'),
 // init
 var td = new TwitDiff({
     
-    // username: 'richardbranson'
+    // username: '_ryancole'
     
 });
 
 // get ids from previous scan
 td.getCachedIds(function (err, cachedIds) {
+    
+    console.log('Getting followers of: ' + td.settings.username);
     
     // get current follower ids
     td.getFollowerIds(function (err, currentIds) {
