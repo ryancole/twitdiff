@@ -63,59 +63,16 @@ TwitDiff.prototype.getFollowerIds = function (callback) {
 TwitDiff.prototype.getUserInformations = function (ids, callback) {
     
     // https://api.twitter.com/1/users/lookup.json?screen_name=981101
-    var userUrl = 'https://api.twitter.com/1/users/lookup.json?screen_name=' + ids.join();
+    var userUrl = 'https://api.twitter.com/1/users/lookup.json?user_id=' + ids.join();
     
     // request data from twitter
     request({ json: true, uri: userUrl }, function (err, res, body) {
         
         if (err || res.statusCode != 200)
-            return callback(new Error('could not get follower'));
+            return callback(new Error('could not get followers'));
         
         return callback(null, body);
         
     });
     
 };
-
-
-if (require.main === module) {
-    
-    var td = new TwitDiff({ username: '_ryancole' });
-    
-    // get ids from previous scan
-    td.getCachedIds(function (err, cachedIds) {
-        
-        // get current follower ids
-        td.getFollowerIds(function (err, currentIds) {
-            
-            // get ids of people who unfollowed
-            var unfollowedBy = cachedIds.filter(function (element) {
-                
-                return currentIds.indexOf(element) == -1;
-                
-            });
-            
-            if (unfollowedBy.length > 0) {
-                
-                // get information about unfollowers
-                td.getUserInformations(unfollowedBy, function (err, unfollowers) {
-                    
-                    unfollowers.forEach(function (unfollower) {
-                        
-                        console.log(unfollower);
-                        
-                    });
-                    
-                });
-                
-            } else {
-                
-                console.log('Nobody has unfollowed you ... yet.');
-                
-            }
-            
-        });
-        
-    });
-    
-}
