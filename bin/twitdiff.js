@@ -6,14 +6,14 @@ var util = require('util'),
 // init
 var td = new TwitDiff({
     
-    // username: '_ryancole'
+    username: 'richardbranson'
     
 });
 
 // get ids from previous scan
 td.getCachedIds(function (err, cachedIds) {
     
-    console.log('Getting followers of: ' + td.settings.username);
+    console.log('Checking to see who has unfollowed: ' + td.settings.username);
     
     // get current follower ids
     td.getFollowerIds(function (err, currentIds) {
