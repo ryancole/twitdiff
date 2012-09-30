@@ -12,4 +12,6 @@ Unfollowed by: Michael Magarinos (MikeMagarinos)
 
 The first invokation of this script simply creates a cache file for subsequent checks. It will always report that nobody has unfollowed you during this initial check.
 
-To use this script, clone the repo and install the dependencies using `npm install`. Modify `bin/twitdiff.js` to include the Twitter handle that you wish to check. This script does not authenticate or authorize using OAuth. This script simply uses public API endpoints and makes two requests during a single invokation.
+To use this script, clone the repo and install the dependencies using `npm install`. Modify `bin/twitdiff.js` to include the Twitter handle that you wish to check.
+
+This script does not authenticate or authorize using OAuth. This script simply uses public API endpoints and makes two requests during a single invokation.
