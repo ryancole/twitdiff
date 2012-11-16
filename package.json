@@ -4,7 +4,7 @@
     "description": "A local utility to see who has unfollowed you on Twitter.",
     "main": "src/twitdiff.js",
     "bin": {
-        "twitdiff": "twitdiff.js"
+        "twitdiff": "bin/twitdiff.js"
     },
     "dependencies": {
         "mkdirp": "~0.3.4",
