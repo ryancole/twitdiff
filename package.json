@@ -1,20 +1,23 @@
 {
-    "author": "Ryan Cole <ryan@rycole.com> (https://github.com/ryancole)",
     "name": "twitdiff",
-    "description": "Get a list of people who unfollowed you on Twitter.",
     "version": "0.0.1",
-    "homepage": "https://github.com/ryancole/twitdiff",
+    "description": "A local utility to see who has unfollowed you on Twitter.",
+    "main": "src/twitdiff.js",
+    "bin": {
+        "twitdiff": "twitdiff.js"
+    },
+    "dependencies": {
+        "mkdirp": "~0.3.4",
+        "request": "~2.12.0",
+        "underscore": "~1.4.2"
+    },
+    "devDependencies": {},
     "repository": {
         "type": "git",
-        "url": "git@github.com:ryancole/twitdiff.git"
+        "url": "git://github.com/ryancole/twitdiff.git"
     },
-    "main": "src/twitdiff.js",
-    "dependencies": {
-        "mkdirp": "*",
-        "underscore": "*",
-        "request": "*"
-    },
-    "engines": {
-        "node": "*"
-    }
+    "keywords": ["twitter"],
+    "author": "Ryan Cole",
+    "license": "BSD",
+    "readmeFilename": "readme.md"
 }
